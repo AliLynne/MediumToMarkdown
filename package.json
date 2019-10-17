@@ -1,0 +1,21 @@
+{
+  "name": "xmltogatsby",
+  "version": "0.0.1",
+  "description": "Convert xml to markdown for gatsby",
+  "main": "index.js",
+  "scripts": {
+    "parse": "node ./src/parser.js",
+    "build": "babel src -d dist"
+  },
+  "author": "AliLynne",
+  "license": "MIT",
+  "dependencies": {
+    "fast-xml-parser": "^3.13.0",
+    "lodash": "^4.17.15",
+    "turndown": "^5.0.3",
+    "xml2json": "^0.11.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
