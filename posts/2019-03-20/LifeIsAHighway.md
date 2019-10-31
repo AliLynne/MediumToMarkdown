@@ -2,7 +2,7 @@
 title: Life Is A Highway
 categories: ["vote-fraud","voter-registration","state-politics","voting-rights"]
 author: Susan E. Stutz
-published: Wed, 20 Mar 2019 16:52:18 GMT
+published: 2019-03-20
 lastUpdated: 2019-03-20T18:22:00.528Z
 ---
 #### There have been 67 bills introduced in 25 states related to automatic voter registration

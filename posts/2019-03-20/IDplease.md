@@ -2,7 +2,7 @@
 title: ID, please
 categories: ["state-politics","georgia","voting","identification"]
 author: Susan E. Stutz
-published: Wed, 20 Mar 2019 16:48:31 GMT
+published: 2019-03-20
 lastUpdated: 2019-03-20T18:21:12.543Z
 ---
 #### House Bill 211 and House Bill 522 will make voting easier for Georgians

@@ -2,7 +2,7 @@
 title: Emergency Rules
 categories: ["guns","emergency","politics","donald-trump","congress"]
 author: Chris Thomas
-published: Tue, 26 Feb 2019 19:08:01 GMT
+published: 2019-02-26
 lastUpdated: 2019-02-26T19:08:01.915Z
 ---
 #### Besides the usual business before the House, three “Emergency” bills are on this week’s docket

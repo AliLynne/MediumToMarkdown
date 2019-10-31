@@ -2,7 +2,7 @@
 title: Lightning Round — 4/4/2019
 categories: "politics"
 author: Chris Thomas
-published: Thu, 04 Apr 2019 17:15:47 GMT
+published: 2019-04-04
 lastUpdated: 2019-04-04T17:15:47.517Z
 ---
 ### Lightning Round — 4/4/2019

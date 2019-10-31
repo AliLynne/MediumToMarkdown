@@ -2,7 +2,7 @@
 title: Murder By Death
 categories: ["policy","paris-agreement","global-warming","climate-change"]
 author: Susan E. Stutz
-published: Tue, 23 Apr 2019 16:47:40 GMT
+published: 2019-04-23
 lastUpdated: 2019-04-23T16:47:40.328Z
 ---
 ![](https://cdn-images-1.medium.com/max/800/1*earpxI5Und9xvFMu_Or4Fg.jpeg)

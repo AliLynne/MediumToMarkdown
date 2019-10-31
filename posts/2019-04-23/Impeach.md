@@ -2,7 +2,7 @@
 title: Impeach
 categories: ["congress","impeachment","constitution","politics","donald-trump"]
 author: Chris Thomas
-published: Tue, 23 Apr 2019 15:59:35 GMT
+published: 2019-04-23
 lastUpdated: 2019-04-24T17:47:43.855Z
 ---
 #### Boy howdy is this a can of worms

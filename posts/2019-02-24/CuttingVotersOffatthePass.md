@@ -2,7 +2,7 @@
 title: Cutting Voters Off at the Pass
 categories: ["arizona","voter-fraud","voter-registration","state-politics"]
 author: Susan E. Stutz
-published: Mon, 25 Feb 2019 03:27:36 GMT
+published: 2019-02-24
 lastUpdated: 2019-02-25T03:27:36.626Z
 ---
 #### The Townsend Acts will keep Arizonans from the polls

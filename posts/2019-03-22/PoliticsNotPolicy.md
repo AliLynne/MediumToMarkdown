@@ -2,7 +2,7 @@
 title: Politics, Not Policy
 categories: ["politics","congress","democrats","media","donald-trump"]
 author: Chris Thomas
-published: Fri, 22 Mar 2019 17:23:53 GMT
+published: 2019-03-22
 lastUpdated: 2019-03-22T17:40:34.266Z
 ---
 #### The price of a check on power

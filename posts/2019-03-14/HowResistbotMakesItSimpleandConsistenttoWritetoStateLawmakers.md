@@ -2,7 +2,7 @@
 title: How Resistbot Makes It Simple and Consistent to Write to State Lawmakers
 categories: ["data-science","civic-engagement"]
 author: Jason Katz-Brown
-published: Thu, 14 Mar 2019 18:52:16 GMT
+published: 2019-03-14
 lastUpdated: 2019-03-15T18:06:37.198Z
 ---
 ![](https://cdn-images-1.medium.com/max/1024/1*TN4D52XajcYPSmWVhaarRA.jpeg)

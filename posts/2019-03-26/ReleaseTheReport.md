@@ -2,7 +2,7 @@
 title: Release The Report
 categories: ["congress","robert-mueller","donald-trump","politics"]
 author: Chris Thomas
-published: Tue, 26 Mar 2019 16:04:52 GMT
+published: 2019-03-26
 lastUpdated: 2019-03-26T16:04:52.582Z
 ---
 #### The American people deserve the whole truth
