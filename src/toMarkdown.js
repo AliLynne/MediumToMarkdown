@@ -8,7 +8,7 @@ const moment = require('moment')
 
 const posts = file.rss.channel.item
 
-const createFolder = async (date) => {
+const createFolder = (date) => {
   fs.mkdir(`posts/${date}`, (err) => {
     if (err) {
       if (err.code === 'EEXIST') {
@@ -18,6 +18,7 @@ const createFolder = async (date) => {
       }
     }
     console.log('Created folder: ' + date)
+    return
   })
 }
 
@@ -32,28 +33,26 @@ const createFile = (filename, date, content) => {
 }
 
 
-const fetchImage = async (URI, filename, callback) => {
-  request.head(uri, (err, res, body) => {
-    console.log(res)
+const fetchImage = (URI, filename, callback) => {
+  request.head(URI, (err, res, body) => {
     if (err) throw err
     request(URI).pipe(fs.createWriteStream(filename)).on('close', callback)
   })
 }
 
-posts.forEach(post => {
-
+const createContent = (post) => {
   const content = turndownService.turndown(post["content:encoded"])
   const linkBegIndex = content.search(/(https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?*^=%&:/~+#-]*[\w@?^=%&/~+#-])?/)
   const linkEndIndex = content.search(/\)/)
-  const link = content.slice(linkBegIndex, linkEndIndex)
+  const imageURL = content.slice(linkBegIndex, linkEndIndex)
 
   let filename = post.title.replace(/\s+/g, '')
   const date = moment(post.pubDate).format('YYYY-MM-DD')
   let categories = JSON.stringify(post.category)
   filename = filename.replace(/\/+/g, '-')
   filename = filename.replace(/,/g, '')
-  //const content = turndownService.turndown(post["content:encoded"])
-  console.log(content)
+
+
   const string = `---
   title: ${post.title}
   categories: ${categories}
@@ -63,6 +62,12 @@ posts.forEach(post => {
   ---
   ${content}`
 
-  createFile(filename, date, string)
+  return { string, imageURL, filename, date }
+}
+
+posts.forEach(post => {
+
+
+
 })
 
