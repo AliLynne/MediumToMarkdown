@@ -1,40 +1,37 @@
 const fs = require('fs')
 const request = require('request')
-const file = require('../posts.json')
 const TurndownService = require('turndown')
 const turndownService = new TurndownService()
 const moment = require('moment')
+const Parser = require('rss-parser')
+const parser = new Parser()
 
 
-const posts = file.rss.channel.item
 
-const createFolder = (date) => {
-  fs.mkdir(`posts/${date}`, (err) => {
-    if (err) {
-      if (err.code === 'EEXIST') {
-        return
-      } else {
-        throw err
-      }
-    }
-    console.log('Created folder: ' + date)
-    return
-  })
+const getPosts = async (path) => {
+  const XMLString = fs.readFileSync(path, 'utf8')
+  const feed = await parser.parseString(XMLString)
+  return feed.items
 }
 
-const createFile = (filename, date, content) => {
+const createFolder = (date) => {
+  console.log(`./posts/${date}`)
+  fs.mkdirSync(`./posts/${date}`, { recursive: true })
+}
+
+const createFile = async (filename, date, content) => {
   createFolder(date)
-    .then(() => {
-      fs.appendFile(`./posts/${date}/${filename}.md`, content, (err) => {
-        if (err) throw err
-        console.log('created file: ' + filename)
-      })
-    })
+  fs.writeFile(`./posts/${date}/${filename}.md`, content, (err) => {
+    if (err) throw err
+    console.log('created file: ' + filename)
+  })
+
 }
 
 
 const fetchImage = (URI, filename, callback) => {
   request.head(URI, (err, res, body) => {
+    console.log(URI)
     if (err) throw err
     request(URI).pipe(fs.createWriteStream(filename)).on('close', callback)
   })
@@ -52,22 +49,35 @@ const createContent = (post) => {
   filename = filename.replace(/\/+/g, '-')
   filename = filename.replace(/,/g, '')
 
+  // need to content.replace(urlString, '')
+  // not sure how to form the urlString
 
-  const string = `---
-  title: ${post.title}
-  categories: ${categories}
-  author: ${post["dc:creator"]}
-  published: ${date}
-  lastUpdated: ${post["atom:updated"]}
-  ---
-  ${content}`
 
-  return { string, imageURL, filename, date }
+  const text = `---
+title: ${post.title}
+categories: ${categories}
+author: ${post["dc:creator"]}
+published: ${date}
+lastUpdated: ${post["atom:updated"]}
+headerImage: ${filename}.jpg
+---
+${content}`
+
+  return { text, imageURL, filename, date }
 }
 
-posts.forEach(post => {
 
 
+module.exports = async function (file) {
+  console.log(file)
+  getPosts(file)
+    .then(posts => {
+      posts.forEach(post => {
+        const content = createContent(post)
+        createFile(content.filename, content.date, content.text)
+        fetchImage(content.imageURL, `./posts/${content.date}/${content.filename}.jpg`, () => console.log('done'))
+      })
+    })
+}
 
-})
 

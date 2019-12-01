@@ -7,12 +7,19 @@
     "parse": "node ./src/parser.js",
     "build": "babel src -d dist"
   },
+  "bin": {
+    "toMarkdown": "./src/index.js"
+  },
   "author": "AliLynne",
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^4.0.1",
     "fast-xml-parser": "^3.13.0",
+    "inquirer": "^7.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "rss-parser": "^3.7.3",
     "turndown": "^5.0.3",
     "xml2json": "^0.11.2"
   },
