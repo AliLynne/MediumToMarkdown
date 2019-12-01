@@ -30,11 +30,17 @@ const createFile = async (filename, date, content) => {
 
 
 const fetchImage = (URI, filename, callback) => {
-  request.head(URI, (err, res, body) => {
-    console.log(URI)
-    if (err) throw err
-    request(URI).pipe(fs.createWriteStream(filename)).on('close', callback)
-  })
+  if (fs.existsSync(filename)) {
+    return
+  }
+
+  request(URI)
+    .on('error', function (err) {
+      console.error(err)
+    })
+    .pipe(fs.createWriteStream(filename))
+    .on('close', callback)
+
 }
 
 const createContent = (post) => {
